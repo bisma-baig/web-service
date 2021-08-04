@@ -37,7 +37,11 @@ function toConsole(data)
 
 function bondJSON(data){
 	console.log(data);
-}
+	//$("#output").text(json.stringify(data));
+	let myData = JSON.stringify(data,null,4);)
+	myData = "<pre>" + myData + "</pre>";
+	$("#output").html(myData);
+}	
 
 </script>
 </head>
