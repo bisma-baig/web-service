@@ -55,7 +55,7 @@ function toConsole(data)
 
 function bondJSON(data){
 	console.log(data);
-//identifies the type of data returned
+	//identifies the type of data returned
 	$('#filmtitle').html(data.title);
 	$("#films").html("");//clears
 	$.each(data.films,function(i,item){//reloads
@@ -68,11 +68,12 @@ function bondJSON(data){
 	let myData = JSON.stringify(data,null,4);
 	myData = "<pre>" + myData + "</pre>";
 	$("#output").html(myData);
-}	
 	*/
+}	
+	
 function bondTemplate(Film){
 
-return `
+	return `
 	<div class = "film">
 		<b>Film:</b>${film.Film}<br/>
 		<b>Title:</b>${film.Title}<br/>
