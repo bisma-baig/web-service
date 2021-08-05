@@ -4,8 +4,6 @@
 <style>
 body {font-family:georgia;}
 
-	
-A) CSS for web service:
 
 .film{
 	border:1px solid #E77DC2;
@@ -74,7 +72,7 @@ function bondJSON(data){
 function bondTemplate(film){
 
 	return `
-	<div class = "film">
+	<div class="film">
 		<b>Film:</b>${film.Film}<br/>
 		<b>Title:</b>${film.Title}<br/>
 		<b>Year:</b>${film.Year}<br/>
