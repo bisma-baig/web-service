@@ -71,7 +71,7 @@ function bondJSON(data){
 	*/
 }	
 	
-function bondTemplate(Film){
+function bondTemplate(film){
 
 	return `
 	<div class = "film">
