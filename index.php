@@ -1,11 +1,11 @@
 <html>
 <head>
-<title>Bond Web Service Demo</title>
+<title> Hike Web Service </title>
 <style>
 body {font-family:georgia;}
 
 
-.film{
+.hike{
 	border:1px solid #E77DC2;
 	border-radius: 5px;
 	padding: 5px;
@@ -54,12 +54,12 @@ function toConsole(data)
 function bondJSON(data){
 	console.log(data);
 	//identifies the type of data returned
-	$('#filmtitle').html(data.title);
-	$("#films").html("");//clears
+	$('#hiketitle').html(data.title);
+	$("#hikes").html("");//clears
 	$.each(data.films,function(i,item){//reloads
-		let myFilm = bondTemplate(item);
+		let myHike = hikeTemplate(item);
 
-		$('<div></div>').html(myFilm).appendTo('#films');
+		$('<div></div>').html(myHike).appendTo('#hikes');
 	});
 	/*
 	//$("#output").text(json.stringify(data));
@@ -69,20 +69,18 @@ function bondJSON(data){
 	*/
 }	
 	
-function bondTemplate(film){
+function hikeTemplate(hike){
 
 	return `
-	<div class="film">
-		<b>Film: </b>${film.Film}<br/>
-		<b>Title: </b>${film.Title}<br/>
-		<b>Year: </b>${film.Year}<br/>
-		<b>Director: </b>${film.Director}<br/>
-		<b>Producers: </b>${film.Producers}<br/>
-		<b>Writer: </b>${film.Writer}<br/>
-		<b>Composer: </b>${film.Composer}<br/>
-		<b>Bond: </b>${film.Bond}<br/>
-		<b>Budget: </b>${film.Budget}<br/>
-		<b>Box Office: </b>${film.BoxOffice}<br/>
+	<div class="hike">
+		<b>Hike: </b>${hike.Hike}<br/>
+		<b>Location: </b>${hike.Location}<br/>
+		<b>Difficulty: </b>${hike.Difficulty}<br/>
+		<b>Elevation: </b>${hike.Elevation}<br/>
+		<b>Length: </b>${hike.Length}<br/>
+		<b>RouteType: </b>${hike.RouteType}<br/>
+		<b>Activity: </b>${hike.Activity}<br/>
+
 		
 		<div class="pic"><img src="thumbnails/${film.Image}" /></div> 	
 	</div>
@@ -92,11 +90,11 @@ function bondTemplate(film){
 </script>
 </head>
 	<body>
-	<h1>Bond Web Service</h1>
-		<a href="year" class="category">Bond Films By Year</a><br />
-		<a href="box" class="category">Bond Films By International Box Office Totals</a>
-		<h3 id="filmtitle">Title Will Go Here</h3>
-		<div id="films">
+	<h1>Hikes Web Service</h1>
+		<a href="year" class="category">Hikes By alphabetical order</a><br />
+		<a href="box" class="category">Hikes By elevation</a>
+		<h3 id="hiketitle">Title Will Go Here</h3>
+		<div id="hikes">
 		
 		</div>
 		<div id="output">Results go here</div>
