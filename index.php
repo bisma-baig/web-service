@@ -39,7 +39,11 @@ function loadAJAX(cat)
 			type: "GET",
 			dataType: "json",
 			url: "api.php?cat=" + cat,
-			success: bondJSON
+			success: bondJSON,
+			error: function(xhr, status, error){
+        	let errorMessage = xhr.status + ': ' + xhr.statusText
+        	alert('Error - ' + errorMessage);
+    }
 
 	});
 	//AJAX connection will go here
@@ -56,17 +60,20 @@ function bondJSON(data){
 	//identifies the type of data returned
 	$('#hiketitle').html(data.title);
 	$("#hike").html("");//clears
+
+	//loops throught films and add template
+	/*
 	$.each(data.films,function(i,item){//reloads
 		let myHike = hikeTemplate(item);
-
 		$('<div></div>').html(myHike).appendTo('#hike');
 	});
-	/*
+	*/
+		//this creates a map of the jSON on our page
 	//$("#output").text(json.stringify(data));
 	let myData = JSON.stringify(data,null,4);
 	myData = "<pre>" + myData + "</pre>";
 	$("#output").html(myData);
-	*/
+	
 }	
 	
 function hikeTemplate(hike){
@@ -91,8 +98,8 @@ function hikeTemplate(hike){
 </head>
 	<body>
 	<h1>Hikes Web Service</h1>
-		<a href="year" class="category">Hikes By alphabetical order</a><br />
-		<a href="box" class="category">Hikes By elevation</a>
+		<a href="hikes" class="elevation">Hikes By elevation</a><br />
+		<a href="hikes" class="hike">Hikes By alphabetical order</a>
 		<h3 id="hiketitle">Title Will Go Here</h3>
 		<div id="hikes">
 		
