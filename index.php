@@ -55,11 +55,11 @@ function bondJSON(data){
 	console.log(data);
 	//identifies the type of data returned
 	$('#hiketitle').html(data.title);
-	$("#hikes").html("");//clears
+	$("#hike").html("");//clears
 	$.each(data.films,function(i,item){//reloads
 		let myHike = hikeTemplate(item);
 
-		$('<div></div>').html(myHike).appendTo('#hikes');
+		$('<div></div>').html(myHike).appendTo('#hike');
 	});
 	/*
 	//$("#output").text(json.stringify(data));
