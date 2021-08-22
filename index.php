@@ -62,12 +62,12 @@ function bondJSON(data){
 	$("#hike").html("");//clears
 
 	//loops throught films and add template
-	/*
-	$.each(data.films,function(i,item){//reloads
+	
+	$.each(data.hikes,function(i,item){//reloads
 		let myHike = hikeTemplate(item);
-		$('<div></div>').html(myHike).appendTo('#hike');
+		$('<div></div>').html(myHike).appendTo('#films');
 	});
-	*/
+	
 		//this creates a map of the jSON on our page
 	//$("#output").text(json.stringify(data));
 	let myData = JSON.stringify(data,null,4);
@@ -89,7 +89,7 @@ function hikeTemplate(hike){
 		<b>Activity: </b>${hike.Activity}<br/>
 
 		
-		<div class="pic"><img src="thumbnails/${film.Image}" /></div> 	
+		<div class="pic"><img src="thumbnails/${hike.Image}" /></div> 	
 	</div>
 	`;
 }
